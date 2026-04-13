@@ -1,4 +1,4 @@
-from structs.VideoGameStatus import VideoGameStatus
+from structs.Enums import VideoGameStatus
 
 class VideoGame:
     def __init__(self, status: str, priority: float = 2000):
