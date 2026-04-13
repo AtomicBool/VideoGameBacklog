@@ -17,3 +17,6 @@ class VideoGame:
     
     def setPriority(self, priority: float):
         self._priority = priority
+
+    def getPriority(self) -> float:
+        return self._priority
