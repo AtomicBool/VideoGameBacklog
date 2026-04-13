@@ -17,6 +17,7 @@ see [schedule.docx](./docs/schedule.docx)
 
 # Contribution
 check [CONTRIBUTION.md](./docs/CONTRIBUTION.md)  
+[TODO List](./docs/tasks.md)
 
 ## Contributors:
 <p align="center">
