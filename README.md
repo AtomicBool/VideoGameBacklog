@@ -1,6 +1,6 @@
-# Title Undecided
-ICS4U Group Project
----
+# Video Game Backlog
+a course Group Project
+
 <p align="center">
   <a href="https://github.com/AtomicBool/ICS4U_TeamProject/releases"><img src="https://img.shields.io/github/v/release/atomicbool/ICS4U_TeamProject?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
 </p>
