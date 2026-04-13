@@ -1,4 +1,4 @@
 from structs.VideoGame import *
 
-test = VideoGame(VideoGameStatus.STARTED)
-print(test.getStatus())
+test = VideoGame("START1ED")
+print(test.getStatusText())

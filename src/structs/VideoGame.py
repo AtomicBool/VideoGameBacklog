@@ -1,28 +1,19 @@
 from structs.VideoGameStatus import VideoGameStatus
 
 class VideoGame:
-    def __init__(self, status: VideoGameStatus, priority):
+    def __init__(self, status: str, priority: float = 2000):
         self.setStatus(status)
-        self._priority_level = priority
+        self.setPriority(priority)
+
+    def setStatus(self, status: str):
+        try: 
+            self._status = VideoGameStatus[status]
+        except KeyError:
+            print("[!] Status should be INTERESTED/STARTED/FINISHED, will fall back to \"INTERESTED\"")
+            self._status = VideoGameStatus.STARTED
     
-
-    # composition method
-    def get_priority(self):
-        return self._priority_level
-
-    def setStatus(self, status):
-        self._status = self._validateStatus(status)
-
-    def _validateStatus(self, status: VideoGameStatus) -> VideoGameStatus:
-        if status.value >= 0 and status.value <= 2:
-            return status
-        else:
-            raise ValueError("[!] Invalid Status, should be [0, 2]")
-        
-    def getStatus(self) -> str:
-        if self._status == VideoGameStatus.INTERESTED: 
-            return "INTERESTED"
-        elif self._status == VideoGameStatus.STARTED:
-            return "STARTED"
-        else:
-            return "FINISHED"
+    def getStatusText(self) -> str:
+        return self._status.name
+    
+    def setPriority(self, priority: float):
+        self._priority = priority
