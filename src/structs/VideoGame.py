@@ -1,8 +1,14 @@
 from structs.VideoGameStatus import VideoGameStatus
 
 class VideoGame:
-    def __init__(self, status: VideoGameStatus):
+    def __init__(self, status: VideoGameStatus, priority):
         self.setStatus(status)
+        self._priority_level = priority
+    
+
+    # composition method
+    def get_priority(self):
+        return self._priority_level
 
     def setStatus(self, status):
         self._status = self._validateStatus(status)
