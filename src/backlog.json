@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Minecraft",
+    "time_spent": 3000.0,
+    "priority": 1,
+    "status": "STARTED",
+    "tags": [
+      "ADVENTURE",
+      "OPENWORLD"
+    ]
+  },
+  {
+    "title": "Cyberpunk 2077",
+    "time_spent": 100.0,
+    "priority": 1,
+    "status": "FINISHED",
+    "tags": [
+      "OPENWORLD"
+    ]
+  },
+  {
+    "title": "It Takes Two",
+    "time_spent": 100.0,
+    "priority": 2,
+    "status": "FINISHED",
+    "tags": [
+      "ARCADE",
+      "ADVENTURE"
+    ]
+  }
+]

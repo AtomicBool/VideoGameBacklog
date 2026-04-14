@@ -10,8 +10,7 @@ import os
 
 from structs.VideoGame import VideoGame
 
-SAVE_FILE = os.path.join(os.path.dirname(__file__), "../../../../backlog.json")
-
+SAVE_FILE = os.path.join(os.path.dirname(__file__), "../../backlog.json")
 
 def save(game_list: list):
     """
