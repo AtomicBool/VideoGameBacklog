@@ -1,9 +1,9 @@
 from structs.Enums import *
 
 class VideoGame:
-    _tags = []
 
     def __init__(self, title: str, time_spent: float, priority: int, status: str, tags: list[str]):
+        self._tags = []
         self.set_title(title)
         self.set_time_spent(time_spent)
         self.set_priority(priority)
