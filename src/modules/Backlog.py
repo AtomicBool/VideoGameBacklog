@@ -15,6 +15,7 @@ def _print_game(add_info: str, game: VideoGame):
     print("\t" + str(game))
 
 def print_games():
+    # We need to print in both A-Z order and priority based 
     pass
 
 def add_game(game: VideoGame):
