@@ -13,15 +13,18 @@ try:
 
         if input_buffer == "p":
             print("list of games")
-            input("Press any key to continue...")
         elif input_buffer == "q":
             print("save & quit")
+            exit(0)
         elif input_buffer == "o":
             print("Format: Title, Hours, Priority, Status, Tags...")
-            print("Example: \"Minecraft, 3000.0, 1, STARTED, ADVENTURE, SANDBOX\"")
+            print("Example: \"Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD\"")
             input_buffer = input(">>> ")
             game = InputParser.parse_game(input_buffer)
             print(game)
-            input("Press any key to continue...")
+        else:
+            print("[!] Invalid Input")
+        
+        input("Press any key to continue...")
 except KeyboardInterrupt:
     exit(0)

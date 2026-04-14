@@ -1,7 +1,6 @@
 from structs.Enums import *
 
 class VideoGame:
-
     def __init__(self, title: str, time_spent: float, priority: int, status: str, tags: list[str]):
         self._tags = []
         self.set_title(title)
@@ -74,8 +73,10 @@ class VideoGame:
         return result
     
     def __str__(self):
-        return  f"{self.get_title()},\
-                {self.get_time_spent()} Hours,\
-                {self.get_priority()},\
-                {self.get_status_text()},\
-                Tags: {self.get_tags_text()}"
+        return (
+            f"{self.get_title()}, "
+            f"{self.get_time_spent()} Hours, "
+            f"{self.get_priority()}, "
+            f"{self.get_status_text()}, "
+            f"Tags: {self.get_tags_text()}"
+        )
