@@ -2,8 +2,7 @@ from structs.VideoGame import VideoGame
 
 game_list = []
 
-@staticmethod
-def add_game(cls, game: VideoGame):
+def add_game(game: VideoGame):
     for index, instance in enumerate(game_list):
         if instance.get_title() == game.get_title():
             game_list[index] = game
@@ -13,8 +12,7 @@ def add_game(cls, game: VideoGame):
     print("Game Added:")
     print("\t" + str(game))
 
-@staticmethod
-def remove_game(cls, title: str):
+def remove_game(title: str):
     """
     Delete a game from the list with given title
     
