@@ -10,6 +10,10 @@ from structs.VideoGame import VideoGame
 
 game_list = []
 
+def print_game(add_info: str, game: VideoGame):
+    print(add_info)
+    print("\t" + str(game))
+
 def add_game(game: VideoGame):
     """
     Add a game to the backlog, or replace it if a game with the same title exists.
@@ -20,11 +24,10 @@ def add_game(game: VideoGame):
     for index, instance in enumerate(game_list):
         if instance.get_title() == game.get_title():
             game_list[index] = game
+            print_game("[Modified]", game)
             return
     game_list.append(game)
-
-    print("Game Added:")
-    print("\t" + str(game))
+    print_game("[Added]", game)
 
 def remove_game(title: str):
     """
@@ -37,7 +40,7 @@ def remove_game(title: str):
     for index, instance in enumerate(game_list):
         if instance.get_title() == title:
             del game_list[index]
-            print(f"[+] game {title} has been removed")
+            print(f"[Removed] {title}")
             return
         
-    print(f"[!] game {title} not found")
+    print(f"[!] {title} not found")

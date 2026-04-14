@@ -40,10 +40,12 @@ def handle_add_game():
         if cmd_add_game == "q":
             break
 
-        #try:
-        Backlog.add_game(InputParser.parse_game(cmd_add_game))
-        #except:
-        #    print("[!] Invalid Input")
+        try:
+            Backlog.add_game(InputParser.parse_game(cmd_add_game))
+        except IndexError:
+            print("[!] Invalid Input: Parameters out of Range")
+        except ValueError as err:
+            print("[!] Invalid Input: " + err)
                     
         input("Press any key to continue...")
 
@@ -57,9 +59,6 @@ def handle_remove_game():
         if cmd_remove_game == "q":
             break
 
-        try:
-            Backlog.remove_game(cmd_remove_game)
-        except:
-            print("[!] Invalid Input")
+        Backlog.remove_game(cmd_remove_game)
                     
         input("Press any key to continue...")
