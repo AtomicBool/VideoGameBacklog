@@ -1,8 +1,22 @@
+"""
+Backlog.py
+Authors: Team
+Date: 2026-04-14
+Description: Manages the in-memory backlog list of VideoGame objects.
+             Supports adding (or replacing) and removing games by title.
+"""
+
 from structs.VideoGame import VideoGame
 
 game_list = []
 
 def add_game(game: VideoGame):
+    """
+    Add a game to the backlog, or replace it if a game with the same title exists.
+
+    Args:
+        game (VideoGame): The game to add or update.
+    """
     for index, instance in enumerate(game_list):
         if instance.get_title() == game.get_title():
             game_list[index] = game
