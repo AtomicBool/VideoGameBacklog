@@ -6,7 +6,14 @@ a course Group Project
 </p>
 
 ## Description
-A command-line application to manage your video game backlog. You can add games, track their play status (Interested / Started / Finished), set a priority level, log hours spent, and assign genre tags. The backlog is saved to a file so your data is available the next time you run the program.
+A command-line application to track your video game backlog. It solves the problem of losing track of games you have purchased but haven't played yet — especially useful if you buy a lot of games during sales or play across multiple platforms (Steam, Epic, Nintendo, etc.).
+
+**Features:**
+- Add games to your backlog with a priority level (1st, 2nd, 3rd, etc.)
+- Track play status for each game: `INTERESTED` / `STARTED` / `FINISHED`
+- View your full backlog sorted A–Z
+- Mark games as started or completed
+- Backlog is saved as a JSON file and reloaded each time you run the program
 
 ## How to Run
 * Requires Python 3.10 or later
@@ -17,22 +24,26 @@ python main.py
 ```
 
 ## Example input/output
-When the program starts, you will see the main menu:
+
+**Screen 1 — Main menu:**
 ```
 GameBacklog Tool
 [p] print | [q] save & quit | [o] add/modify a game | [ctrl + c] force quit
->>>
+>>> o
 ```
 
-To add a game, press `o` and enter the game details in this format:
+**Screen 2 — Add/modify a game** (press `q` to return to main menu):
 ```
+[q] return to main menu | [ctrl + c] force quit
 Format: Title, Hours, Priority, Status, Tags...
+Example: "Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD"
 >>> Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD
 ```
 
-Output after adding:
+**Output after adding:**
 ```
 Minecraft, 3000.0 Hours, 1, STARTED, Tags: ['ADVENTURE', 'OPENWORLD']
+Press any key to continue...
 ```
 
 Valid values:
