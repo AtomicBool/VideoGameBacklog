@@ -17,22 +17,26 @@ python main.py
 ```
 
 ## Example input/output
-When the program starts, you will see the main menu:
+
+**Screen 1 — Main menu:**
 ```
 GameBacklog Tool
 [p] print | [q] save & quit | [o] add/modify a game | [ctrl + c] force quit
->>>
+>>> o
 ```
 
-To add a game, press `o` and enter the game details in this format:
+**Screen 2 — Add/modify a game** (press `q` to return to main menu):
 ```
+[q] return to main menu | [ctrl + c] force quit
 Format: Title, Hours, Priority, Status, Tags...
+Example: "Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD"
 >>> Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD
 ```
 
-Output after adding:
+**Output after adding:**
 ```
 Minecraft, 3000.0 Hours, 1, STARTED, Tags: ['ADVENTURE', 'OPENWORLD']
+Press any key to continue...
 ```
 
 Valid values:
