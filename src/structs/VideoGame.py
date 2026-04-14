@@ -3,33 +3,34 @@ from structs.Enums import *
 class VideoGame:
     _tags = []
 
-    def __init__(self, timeSpent: float, priority: int, status: str, tags: list[str]):
-        self.setStatus(status)
-        self.setPriority(priority)
-        self.setTag(tags)
+    def __init__(self, time_spent: float, priority: int, status: str, tags: list[str]):
+        self.set_time_spent(time_spent)
+        self.set_priority(priority)
+        self.set_status(status)
+        self.set_tags(tags)
 
     # region Regular Getter/Setter
-    def setTimeSpent(self, timeSpent: float):
-        self._timeSpent = self.validateTimeSpent(timeSpent)
+    def set_time_spent(self, time_spent: float):
+        self._time_spent = self.validate_time_spent(time_spent)
 
-    def validateTimeSpent(self, timeSpent: float) -> float:
-        if timeSpent < 0.0: 
+    def _validate_time_spent(self, time_spent: float) -> float:
+        if time_spent < 0.0: 
             print("[!] Invalid Time Spent, fall back to 0 hrs")
             return 0.0
-        return timeSpent 
+        return time_spent 
 
-    def getTimeSpent(self) -> float:
-        return self._timeSpent
+    def get_time_spent(self) -> float:
+        return self._time_spent
 
-    def setPriority(self, priority: int):
+    def set_priority(self, priority: int):
         self._priority = priority
 
-    def getPriority(self) -> int:
+    def get_priority(self) -> int:
         return self._priority
 
     # region ENUM Getter/Setter 
     # setter takes string, getter returns string
-    def setStatus(self, status: str):
+    def set_status(self, status: str):
         """
         Parse status (`INTERESTED/STARTED/FINISHED`),  
         fallback to `INTERESTED` if input is wrong
@@ -43,10 +44,10 @@ class VideoGame:
             print("[!] Status should be INTERESTED/STARTED/FINISHED, will fall back to \"INTERESTED\"")
             self._status = GameStatus.INTERESTED
     
-    def getStatusText(self) -> str:     
+    def get_status_text(self) -> str:     
         return self._status.name
     
-    def setTag(self, tags: list[str]):
+    def set_tags(self, tags: list[str]):
         """
         parse valid tags, invalid tags will be ignored  
         
@@ -59,7 +60,7 @@ class VideoGame:
             except KeyError:
                 print(f"[!] Invalid Tag: {tag}")
 
-    def getTagsText(self) -> list[str]:
+    def get_tags_text(self) -> list[str]:
         result = []
         for tag in self._tags:
             result.append(tag.name)
