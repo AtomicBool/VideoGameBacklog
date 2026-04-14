@@ -26,7 +26,7 @@ def add_game() -> str:
     Display the add/modify game screen and return the user's input.
 
     Returns:
-        str: The raw input string, or 'q' to return to the main menu.
+        str: The raw input string
     """
     os.system("cls" if os.name == "nt" else "clear")
     print("[q] return to main menu | [ctrl + c] force quit")
@@ -39,7 +39,7 @@ def remove_game() -> str:
     Display the remove game screen and return the user's input.
 
     Returns:
-        str: The game title to remove, or 'q' to return to the main menu.
+        str: The game title to remove
     """
     os.system("cls" if os.name == "nt" else "clear")
     print("[q] return to main menu | [ctrl + c] force quit")

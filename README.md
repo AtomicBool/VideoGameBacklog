@@ -43,7 +43,7 @@ Example: "Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD"
 **Output after adding:**
 ```
 Minecraft, 3000.0 Hours, 1, STARTED, Tags: ['ADVENTURE', 'OPENWORLD']
-Press any key to continue...
+Press Enter to continue...
 ```
 
 Valid values:

@@ -26,7 +26,7 @@ def handle_main_menu(cmd: str):
     else:
         print("[!] Invalid Input")
 
-    input("Press any key to continue...")
+    input("Press Enter to continue...")
 
 def handle_print_game():
     Backlog.print_games()
@@ -53,7 +53,7 @@ def handle_add_game():
         except ValueError as err:
             print("[!] Invalid Input: " + err)
                     
-        input("Press any key to continue...")
+        input("Press Enter to continue...")
 
 def handle_remove_game():
     """
@@ -67,4 +67,4 @@ def handle_remove_game():
 
         Backlog.remove_game(cmd_remove_game)
                     
-        input("Press any key to continue...")
+        input("Press Enter to continue...")
