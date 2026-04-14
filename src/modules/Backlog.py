@@ -11,7 +11,7 @@ def add_game(cls, game: VideoGame):
     game_list.append(game)
 
     print("Game Added:")
-    print("\t" + game)
+    print("\t" + str(game))
 
 @staticmethod
 def remove_game(cls, title: str):
