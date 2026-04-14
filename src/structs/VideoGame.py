@@ -3,15 +3,22 @@ from structs.Enums import *
 class VideoGame:
     _tags = []
 
-    def __init__(self, time_spent: float, priority: int, status: str, tags: list[str]):
+    def __init__(self, title: str, time_spent: float, priority: int, status: str, tags: list[str]):
+        self.set_title(title)
         self.set_time_spent(time_spent)
         self.set_priority(priority)
         self.set_status(status)
         self.set_tags(tags)
 
     # region Regular Getter/Setter
+    def get_title(self):
+        return self._title
+    
+    def set_title(self, title: str):
+        self._title = title
+
     def set_time_spent(self, time_spent: float):
-        self._time_spent = self.validate_time_spent(time_spent)
+        self._time_spent = self._validate_time_spent(time_spent)
 
     def _validate_time_spent(self, time_spent: float) -> float:
         if time_spent < 0.0: 
@@ -65,3 +72,10 @@ class VideoGame:
         for tag in self._tags:
             result.append(tag.name)
         return result
+    
+    def __str__(self):
+        return  f"{self.get_title()},\
+                {self.get_time_spent()} Hours,\
+                {self.get_priority()},\
+                {self.get_status_text()},\
+                Tags: {self.get_tags_text()}"
