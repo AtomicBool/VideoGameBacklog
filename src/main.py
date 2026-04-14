@@ -1,4 +1,4 @@
-from modules import TUI, Command
+from modules.ui import Command, TUI
 
 try:
     while True:

@@ -6,7 +6,9 @@ Description: Handles all user input logic for the Video Game Backlog application
              Routes main menu commands to the appropriate sub-handlers.
 """
 
-from modules import InputParser, TUI, Backlog
+from modules import Backlog
+from modules.ui import TUI
+from modules.parser import InputParser
 
 def handle_main_menu(cmd: str):
     """
