@@ -51,7 +51,7 @@ def handle_add_game():
         except IndexError:
             print("[!] Invalid Input: Parameters out of Range")
         except ValueError as err:
-            print("[!] Invalid Input: " + err)
+            print("[!] Invalid Input: " + str(err))
                     
         input("Press Enter to continue...")
 
