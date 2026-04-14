@@ -11,11 +11,23 @@ from structs.VideoGame import VideoGame
 game_list = []
 
 def _print_game(add_info: str, game: VideoGame):
+    """
+    Print a label and game details to the console.
+
+    Args:
+        add_info (str): A label shown above the game (e.g. '[Added]', '[Modified]').
+        game (VideoGame): The game to display.
+    """
     print(add_info)
     print("\t" + str(game))
 
 def print_games():
-    # We need to print in both A-Z order and priority based 
+    """
+    Print all games in the backlog.
+
+    TODO: print in A-Z order and by priority.
+    """
+    # We need to print in both A-Z order and priority based
     pass
 
 def add_game(game: VideoGame):

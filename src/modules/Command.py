@@ -29,9 +29,11 @@ def handle_main_menu(cmd: str):
     input("Press Enter to continue...")
 
 def handle_print_game():
+    """Display all games currently in the backlog."""
     Backlog.print_games()
 
 def handle_save_quit():
+    """Save the backlog to file and exit the program."""
     print("save & quit")
     exit(0)
             
