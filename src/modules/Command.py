@@ -16,10 +16,9 @@ def handle_main_menu(cmd: str):
         cmd (str): Command string from the user ('p', 'o', 'r', or 'q').
     """
     if cmd == "p":
-        print("list of games")
+        handle_print_game()
     elif cmd == "q":
-        print("save & quit")
-        exit(0)
+        handle_save_quit()
     elif cmd == "o":
         handle_add_game()
     elif cmd == "r":
@@ -28,6 +27,13 @@ def handle_main_menu(cmd: str):
         print("[!] Invalid Input")
 
     input("Press any key to continue...")
+
+def handle_print_game():
+    Backlog.print_games()
+
+def handle_save_quit():
+    print("save & quit")
+    exit(0)
             
 def handle_add_game():
     """

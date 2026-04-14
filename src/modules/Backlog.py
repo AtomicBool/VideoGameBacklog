@@ -10,9 +10,12 @@ from structs.VideoGame import VideoGame
 
 game_list = []
 
-def print_game(add_info: str, game: VideoGame):
+def _print_game(add_info: str, game: VideoGame):
     print(add_info)
     print("\t" + str(game))
+
+def print_games():
+    pass
 
 def add_game(game: VideoGame):
     """
@@ -24,10 +27,10 @@ def add_game(game: VideoGame):
     for index, instance in enumerate(game_list):
         if instance.get_title() == game.get_title():
             game_list[index] = game
-            print_game("[Modified]", game)
+            _print_game("[Modified]", game)
             return
     game_list.append(game)
-    print_game("[Added]", game)
+    _print_game("[Added]", game)
 
 def remove_game(title: str):
     """

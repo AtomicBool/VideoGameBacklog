@@ -18,7 +18,7 @@ def main_menu() -> str:
     """
     os.system("cls" if os.name == "nt" else "clear")
     print("GameBacklog Tool")
-    print("[p] print | [q] save & quit | [o] add/modify a game | [ctrl + c] force quit")
+    print("[p] print | [q] save & quit | [o] add/modify a game | [r] remove a game | [ctrl + c] force quit")
     return input(">>> ").strip()
 
 def add_game() -> str:
