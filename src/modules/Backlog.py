@@ -1,6 +1,6 @@
 """
 Backlog.py
-Authors: Team
+Authors: Matthew
 Date: 2026-04-14
 Description: Manages the in-memory backlog list of VideoGame objects.
              Supports adding (or replacing) and removing games by title.

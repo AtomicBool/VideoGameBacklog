@@ -1,6 +1,6 @@
 """
 Command.py
-Authors: Team
+Authors: Steven
 Date: 2026-04-14
 Description: Handles all user input logic for the Video Game Backlog application.
              Routes main menu commands to the appropriate sub-handlers.

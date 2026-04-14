@@ -1,6 +1,6 @@
 """
 InputParser.py
-Authors: Team
+Authors: Ray
 Date: 2026-04-14
 Description: Parses raw comma-separated user input into VideoGame objects.
 """
