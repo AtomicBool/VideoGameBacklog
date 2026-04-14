@@ -11,64 +11,16 @@ from modules.ui import TUI
 from modules.parser import InputParser
 
 def handle_main_menu(cmd: str):
-    """
-    Route a main menu command to the appropriate handler.
-
-    Args:
-        cmd (str): Command string from the user ('p', 'o', 'r', or 'q').
-    """
-    if cmd == "p":
-        handle_print_game()
-    elif cmd == "q":
-        handle_save_quit()
-    elif cmd == "o":
-        handle_add_game()
-    elif cmd == "r":
-        handle_remove_game()
-    else:
-        print("[!] Invalid Input")
-
-    input("Press Enter to continue...")
+    pass
 
 def handle_print_game():
-    """Display all games currently in the backlog."""
-    Backlog.print_games()
+    pass
 
 def handle_save_quit():
-    """Save the backlog to file and exit the program."""
-    print("save & quit")
-    exit(0)
+    pass
             
 def handle_add_game():
-    """
-    Show the add/modify game screen in a loop until the user presses 'q'.
-    Parses input and adds the game to the backlog.
-    """
-    while True:
-        cmd_add_game = TUI.add_game()
-
-        if cmd_add_game == "q":
-            break
-
-        try:
-            Backlog.add_game(InputParser.parse_game(cmd_add_game))
-        except IndexError:
-            print("[!] Invalid Input: Parameters out of Range")
-        except ValueError as err:
-            print("[!] Invalid Input: " + str(err))
-                    
-        input("Press Enter to continue...")
+    pass
 
 def handle_remove_game():
-    """
-    Show the remove game screen in a loop until the user presses 'q'.
-    Removes the matching game from the backlog by title.
-    """
-    while True:
-        cmd_remove_game = TUI.remove_game()
-        if cmd_remove_game == "q":
-            break
-
-        Backlog.remove_game(cmd_remove_game)
-                    
-        input("Press Enter to continue...")
+    pass

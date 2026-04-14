@@ -11,52 +11,13 @@ from structs.VideoGame import VideoGame
 game_list = []
 
 def _print_game(add_info: str, game: VideoGame):
-    """
-    Print a label and game details to the console.
-
-    Args:
-        add_info (str): A label shown above the game (e.g. '[Added]', '[Modified]').
-        game (VideoGame): The game to display.
-    """
-    print(add_info)
-    print("\t" + str(game))
+    pass
 
 def print_games():
-    """
-    Print all games in the backlog.
-
-    TODO: print in A-Z order and by priority.
-    """
-    # We need to print in both A-Z order and priority based
     pass
 
 def add_game(game: VideoGame):
-    """
-    Add a game to the backlog, or replace it if a game with the same title exists.
-
-    Args:
-        game (VideoGame): The game to add or update.
-    """
-    for index, instance in enumerate(game_list):
-        if instance.get_title() == game.get_title():
-            game_list[index] = game
-            _print_game("[Modified]", game)
-            return
-    game_list.append(game)
-    _print_game("[Added]", game)
+    pass
 
 def remove_game(title: str):
-    """
-    Delete a game from the list with given title
-    
-    Notice that this is not the right way to   
-    delete elements from list,  
-    but it works because title is unique in this case
-    """
-    for index, instance in enumerate(game_list):
-        if instance.get_title() == title:
-            del game_list[index]
-            print(f"[Removed] {title}")
-            return
-        
-    print(f"[!] {title} not found")
+    pass
