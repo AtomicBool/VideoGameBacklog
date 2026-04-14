@@ -1,9 +1,9 @@
 from structs.Enums import *
 
 class VideoGame:
-    _tags = []
 
     def __init__(self, time_spent: float, priority: int, status: str, tags: list[str]):
+        self._tags = []
         self.set_time_spent(time_spent)
         self.set_priority(priority)
         self.set_status(status)
@@ -11,7 +11,7 @@ class VideoGame:
 
     # region Regular Getter/Setter
     def set_time_spent(self, time_spent: float):
-        self._time_spent = self.validate_time_spent(time_spent)
+        self._time_spent = self._validate_time_spent(time_spent)
 
     def _validate_time_spent(self, time_spent: float) -> float:
         if time_spent < 0.0: 
