@@ -28,8 +28,6 @@ def handle_main_menu(cmd: str):
     elif cmd == "3":
         handle_remove_game()
     elif cmd == "4":
-        handle_social()
-    elif cmd == "5":
         handle_save_quit()
     else:
         print(f'[!] Unknown command: "{cmd}". Enter 1-4.')
@@ -41,8 +39,6 @@ def handle_print_game():
     print()
     print("=== Your Backlog ===")
     Backlog.print_games()
-    print(Backlog.generate_taste())
-    print()
     input("Press Enter to return to menu...")
 
 def handle_add_game():
@@ -75,15 +71,3 @@ def handle_save_quit():
     print("[*] Backlog saved. Goodbye!")
     sys.exit(0)
 
-def handle_social():
-    taste = TUI.social()
-
-    if not taste:
-        return
-    
-    similarity = Taste.compare_taste(Backlog.generate_taste(), InputParser.parse_taste(taste))
-    if similarity < 0:
-        similarity = 0
-    print(f"Similarity {similarity * 100: .2f}%")
-
-    input("Press Enter to continue...")
