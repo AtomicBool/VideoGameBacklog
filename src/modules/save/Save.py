@@ -1,7 +1,7 @@
 import json, os
 from structs.VideoGame import VideoGame
 
-save_destination = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../../backlog.json")
+save_destination = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../backlog.json")
 
 def save(games_list: list[VideoGame]):
     data = []
