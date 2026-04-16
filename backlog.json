@@ -8,5 +8,14 @@
       "ADVENTURE",
       "OPENWORLD"
     ]
+  },
+  {
+    "title": "2077",
+    "time_spent": 100.0,
+    "priority": 1,
+    "status": "STARTED",
+    "tags": [
+      "ADVENTURE"
+    ]
   }
 ]
