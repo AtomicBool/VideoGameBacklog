@@ -8,55 +8,42 @@ Description: Manages the in-memory backlog list of VideoGame objects.
 
 from structs.VideoGame import VideoGame
 
-game_list = []
+game_list = []   
 
-
-def _print_game(add_info: str, game: VideoGame):
-    """
-    Print a single game entry with a leading label.
-
-    Args:
-        add_info (str): Label prepended to the line (e.g. an index like "[1]").
-        game (VideoGame): The game to display.
-    """
-    print(f"{add_info} {game}")
-
-
-def print_games():
-    """Print every game in game_list, numbered from 1. Prints a placeholder if empty."""
-    if not game_list:
-        print("  (backlog is empty)")
+def print_games():   # This function prints all games in the list with numbers
+    if len(game_list) == 0:
+        print("backlog is empty")   
         return
-    for i, game in enumerate(game_list, start=1):
-        _print_game(f"[{i}]", game)
+
+    i = 1
+    for game in game_list:
+        # Print each game with its position number
+        print("[" + str(i) + "] " + str(game))
+        i = i + 1
 
 
-def add_game(game: VideoGame):
-    """
-    Add game to game_list, replacing any existing entry with the same title.
 
-    Args:
-        game (VideoGame): The game to add or replace.
-    """
-    for i, existing in enumerate(game_list):
+def add_game(game):   # This function adds a game or replaces it if the title already exists
+    for i in range(len(game_list)):
+        existing = game_list[i]
+
+        # Compare titles in lowercase so it ignores uppercase/lowercase differences
         if existing.get_title().lower() == game.get_title().lower():
-            game_list[i] = game
-            print(f'[*] "{game.get_title()}" updated in backlog.')
+            game_list[i] = game  
+            print(game.get_title() + " updated")
             return
+    # If no matching title was found, add the game to the list
     game_list.append(game)
-    print(f'[+] "{game.get_title()}" added to backlog.')
+    print(game.get_title() + " added")
+def remove_game(title):   # This function removes a game by its title
+    for i in range(len(game_list)):
+        game = game_list[i]
 
-
-def remove_game(title: str):
-    """
-    Remove the first game whose title matches (case-insensitive).
-
-    Args:
-        title (str): Title of the game to remove.
-    """
-    for i, game in enumerate(game_list):
+        # Check if the current game's title matches the given title
         if game.get_title().lower() == title.lower():
-            game_list.pop(i)
-            print(f'[-] "{game.get_title()}" removed from backlog.')
+            game_list.pop(i)   
+            print(game.get_title() + " removed")
             return
-    print(f'[!] "{title}" not found in backlog.')
+        
+ 
+    print(title + " not found")
