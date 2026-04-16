@@ -94,6 +94,10 @@ class VideoGame:
             except KeyError:
                 print(f"[!] Invalid Tag: {tag}")
 
+    def get_tags(self) -> list[GameTag]:
+        """Return the list of Tags"""
+        return self._tags
+
     def get_tags_text(self) -> list[str]:
         """Return the list of genre tags as strings (e.g. ['ADVENTURE', 'OPENWORLD'])."""
         result = []

@@ -29,7 +29,8 @@ def main_menu() -> str:
     print("║  1. View Backlog         ║")
     print("║  2. Add Game             ║")
     print("║  3. Remove Game          ║")
-    print("║  4. Save & Quit          ║")
+    print("║  4. Social               ║")
+    print("║  5. Save & Quit          ║")
     print("╚══════════════════════════╝")
     return input("> ").strip()
 
@@ -65,5 +66,13 @@ def remove_game() -> str:
     _clear()
     print("=== Remove Game ===")
     print("Enter the title of the game to remove:")
+    print()
+    return input("> ").strip()
+
+def social() -> str:
+    _clear()
+    print("=== Social ===")
+    print("Example: \"100, 200, 255, 0, 200, 0\"")
+    print("Enter your friends' taste:")
     print()
     return input("> ").strip()

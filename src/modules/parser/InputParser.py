@@ -29,3 +29,8 @@ def parse_game(text: str) -> VideoGame:
         status = parts[3],
         tags = parts[4:]
     )
+
+def parse_taste(text: str) -> list[int]:
+    parts = [x.strip() for x in text.split(",")]
+    result = [int(x) for x in parts]
+    return result

@@ -6,14 +6,15 @@ a course Group Project
 </p>
 
 ## Description
-A command-line application to track your video game backlog. It solves the problem of losing track of games you have purchased but haven't played yet — especially useful if you buy a lot of games during sales or play across multiple platforms (Steam, Epic, Nintendo, etc.).
+A command-line application to track your video game backlog.
+It solves the problem that you cant compare your taste of games with STEAM/other platforms
 
 **Features:**
 - Add games to your backlog with a priority level (1st, 2nd, 3rd, etc.)
 - Track play status for each game: `INTERESTED` / `STARTED` / `FINISHED`
-- View your full backlog sorted A–Z
+- View your full backlog
 - Mark games as started or completed
-- Backlog is saved as a JSON file and reloaded each time you run the program
+- Backlog is saved as a `JSON` file and reloaded each time you run the program
 
 ## How to Run
 * Requires Python 3.10 or later
@@ -25,30 +26,14 @@ python main.py
 
 ## Example input/output
 
-**Screen 1 — Main menu:**
-```
-GameBacklog Tool
-[p] print | [q] save & quit | [o] add/modify a game | [ctrl + c] force quit
->>> o
-```
-
-**Screen 2 — Add/modify a game** (press `q` to return to main menu):
-```
-[q] return to main menu | [ctrl + c] force quit
-Format: Title, Hours, Priority, Status, Tags...
-Example: "Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD"
->>> Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD
-```
-
-**Output after adding:**
-```
-Minecraft, 3000.0 Hours, 1, STARTED, Tags: ['ADVENTURE', 'OPENWORLD']
-Press Enter to continue...
-```
+TODO
 
 Valid values:
 - **Status:** `INTERESTED` / `STARTED` / `FINISHED`
 - **Tags:** `ADVENTURE`, `ARCADE`, `COMBAT`, `ROGUELIKE`, `OPENWORLD`, `STRATEGY`
+
+# Algorithm
+see [algo.md](./docs/algo.md)
 
 # Development schedule
 see [schedule.docx](./docs/schedule.docx)
