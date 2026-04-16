@@ -3,7 +3,8 @@ from modules.save import Save
 from modules.ui import Command, TUI
 
 # Load any previously saved backlog
-Backlog.game_list.extend(Save.load())
+backlog = Backlog()
+backlog.load_games(Save.load())
 
 try:
     while True:
