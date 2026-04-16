@@ -1,18 +1,12 @@
 """
 TUI.py
-Authors: Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD
+Authors: Steven
 Date: 2026-04-14
 Description: Handles all terminal screen rendering for the Video Game Backlog
              application. Each function clears the screen, prints a prompt,
              and returns the raw user input string.
 """
 
-import os
-
-
-def _clear():
-    """Clear the terminal screen."""
-    os.system("cls" if os.name == "nt" else "clear")
 
 
 def main_menu() -> str:
@@ -22,15 +16,13 @@ def main_menu() -> str:
     Returns:
         str: The raw input string entered by the user.
     """
-    _clear()
     print("╔══════════════════════════╗")
     print("║   Video Game Backlog     ║")
     print("╠══════════════════════════╣")
     print("║  1. View Backlog         ║")
     print("║  2. Add Game             ║")
     print("║  3. Remove Game          ║")
-    print("║  4. Social               ║")
-    print("║  5. Save & Quit          ║")
+    print("║  4. Save & Quit          ║")
     print("╚══════════════════════════╝")
     return input("> ").strip()
 
@@ -45,7 +37,6 @@ def add_game() -> str:
     Returns:
         str: The raw comma-separated input string entered by the user.
     """
-    _clear()
     print("=== Add Game ===")
     print("Format : Title, Hours, Priority, Status, Tags...")
     print("Example: Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD")
@@ -63,16 +54,8 @@ def remove_game() -> str:
     Returns:
         str: The game title string entered by the user.
     """
-    _clear()
     print("=== Remove Game ===")
     print("Enter the title of the game to remove:")
     print()
     return input("> ").strip()
 
-def social() -> str:
-    _clear()
-    print("=== Social ===")
-    print("Example: \"100, 200, 255, 0, 200, 0\"")
-    print("Enter your friends' taste:")
-    print()
-    return input("> ").strip()
