@@ -9,15 +9,14 @@ Description: Manages the in-memory backlog list of VideoGame objects.
 from structs.VideoGame import VideoGame
 
 game_list = []   
-
-def print_games():   # This function prints all games in the list with numbers
+# This function prints all games in the list with numbers
+def print_games():  
     if len(game_list) == 0:
         print("backlog is empty")   
         return
 
     i = 1
     for game in game_list:
-        # Print each game with its position number
         print("[" + str(i) + "] " + str(game))
         i = i + 1
 
