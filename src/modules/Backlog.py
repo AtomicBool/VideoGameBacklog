@@ -15,6 +15,9 @@ class Backlog():
     def load_games(self, games: list[VideoGame]):
         self._game_list.extend(games)
 
+    def get_list(self):
+        return self._game_list
+
     # This function prints all games in the list with numbers
     def print_games(self):  
         if len(self._game_list) == 0:
@@ -26,7 +29,7 @@ class Backlog():
             print("[" + str(i) + "] " + str(game))
             i = i + 1
 
-    def add_game(self, game: list[VideoGame]):   # This function adds a game or replaces it if the title already exists
+    def add_game(self, game: VideoGame):   # This function adds a game or replaces it if the title already exists
         for i in range(len(self._game_list)):
             existing = self._game_list[i]
 

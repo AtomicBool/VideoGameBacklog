@@ -14,7 +14,7 @@ from modules.parser import InputParser
 from modules.save import Save
 from modules.algorithm import Taste
 
-m_backlog: Backlog
+m_backlog: Backlog = Backlog()
 
 def open_backlog(backlog: Backlog):
     m_backlog = backlog
@@ -72,7 +72,7 @@ def handle_remove_game():
 
 def handle_save_quit():
     """Save the backlog to disk and exit the application."""
-    Save.save(m_backlog.game_list)
+    Save.save(m_backlog.get_list())
     print("[*] Backlog saved. Goodbye!")
     sys.exit(0)
 
