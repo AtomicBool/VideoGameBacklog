@@ -2,7 +2,7 @@ import json, os
 from structs.VideoGame import VideoGame
 
 # convert and save dictionary in the json file
-def save(games_list: list[VideoGame], save_destination = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../backlog.json")):
+def save(games_list: list[VideoGame], save_destination = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../../backlog.json")):
     data = []
     for game in games_list:
         data.append({

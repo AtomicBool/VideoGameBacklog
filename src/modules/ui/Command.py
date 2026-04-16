@@ -17,6 +17,7 @@ from modules.algorithm import Taste
 m_backlog: Backlog = Backlog()
 
 def open_backlog(backlog: Backlog):
+    global m_backlog
     m_backlog = backlog
 
 def handle_main_menu(cmd: str):
