@@ -8,7 +8,6 @@ Description: Manages the in-memory backlog list of VideoGame objects.
 
 from structs.VideoGame import VideoGame
 
-
 class Backlog():
     def __init__(self):
         self._game_list: list[VideoGame] = []  

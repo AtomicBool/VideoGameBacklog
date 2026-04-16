@@ -8,11 +8,16 @@ Description: Handles all user input logic for the Video Game Backlog application
 
 import sys
 
-from modules import Backlog
+from modules.Backlog import Backlog
 from modules.ui import TUI
 from modules.parser import InputParser
 from modules.save import Save
 from modules.algorithm import Taste
+
+m_backlog: Backlog
+
+def open_backlog(backlog: Backlog):
+    m_backlog = backlog
 
 def handle_main_menu(cmd: str):
     """
@@ -38,7 +43,7 @@ def handle_print_game():
     """Display the full backlog and wait for the user to press Enter."""
     print()
     print("=== Your Backlog ===")
-    Backlog.print_games()
+    m_backlog.print_games()
     input("Press Enter to return to menu...")
 
 def handle_add_game():
@@ -51,7 +56,7 @@ def handle_add_game():
         return
     try:
         game = InputParser.parse_game(raw)
-        Backlog.add_game(game)
+        m_backlog.add_game(game)
     except (ValueError, IndexError) as e:
         print(f"[!] Could not parse input: {e}")
     input("Press Enter to continue...")
@@ -62,12 +67,12 @@ def handle_remove_game():
     title = TUI.remove_game()
     if not title:
         return
-    Backlog.remove_game(title)
+    m_backlog.remove_game(title)
     input("Press Enter to continue...")
 
 def handle_save_quit():
     """Save the backlog to disk and exit the application."""
-    Save.save(Backlog.game_list)
+    Save.save(m_backlog.game_list)
     print("[*] Backlog saved. Goodbye!")
     sys.exit(0)
 
