@@ -1,9 +1,8 @@
 import json, os
 from structs.VideoGame import VideoGame
 
-save_destination = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../../backlog.json")
-
-def save(games_list: list[VideoGame]):
+# convert and save dictionary in the json file
+def save(games_list: list[VideoGame], save_destination = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../../backlog.json")):
     data = []
     for game in games_list:
         data.append({
@@ -16,7 +15,8 @@ def save(games_list: list[VideoGame]):
     with open(save_destination, "w") as f:
         json.dump(data, f, indent=2)
 
-def load():
+# load data from the json file
+def load(save_destination = os.path.join(os.path.dirname(os.path.dirname(__file__)), "../../backlog.json")):
     if not os.path.exists(save_destination):
         return []
     with open(save_destination, "r") as f:

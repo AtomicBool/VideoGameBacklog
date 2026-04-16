@@ -7,8 +7,6 @@ Description: Handles all terminal screen rendering for the Video Game Backlog
              and returns the raw user input string.
 """
 
-
-
 def main_menu() -> str:
     """
     Render the main menu and return the user's choice.
