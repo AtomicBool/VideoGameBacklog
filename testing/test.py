@@ -32,6 +32,42 @@ class TestParser(unittest.TestCase):
         game = parse_game("TestGame, -5.0, 1, INTERESTED, WRONGTAG")
         self.assertEqual(game.get_tags(), [])
 
+class TestSave(unittest.TestCase):
+    def test_save_load(self):
+        games = [
+            VideoGame("Minecraft", 3000.0, 1, "STARTED", ["ADVENTURE", "OPENWORLD"]),
+            VideoGame("Balatro", 50.0, 2, "INTERESTED", ["ARCADE"]),
+        ]
+        Save.save(games, self.save_path)
+        loaded = Save.load(self.save_path)
+
+        self.assertEqual(len(loaded), 2)
+        self.assertEqual(loaded[0].get_title(), "Minecraft")
+        self.assertEqual(loaded[0].get_time_spent(), 3000.0)
+        self.assertEqual(loaded[0].get_priority(), 1)
+        self.assertEqual(loaded[0].get_status_text(), "STARTED")
+        self.assertEqual(loaded[0].get_tags_text(), ["ADVENTURE", "OPENWORLD"])
+        self.assertEqual(loaded[1].get_title(), "Balatro")
+        self.assertEqual(loaded[1].get_status_text(), "INTERESTED")
+
+    def test_parser_save(self):
+        raw_inputs = [
+            "Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD",
+            "Balatro, 50.0, 2, INTERESTED, ARCADE",
+            "CS2, 500.0, 3, FINISHED, COMBAT",
+        ]
+        games = [parse_game(r) for r in raw_inputs]
+
+        Save.save(games, self.save_path)
+
+        backlog = Backlog()
+        backlog.load_games(Save.load(self.save_path))
+
+        self.assertEqual(len(backlog.get_list()), 3)
+        self.assertEqual(backlog.get_list()[0].get_title(), "Minecraft")
+        self.assertEqual(backlog.get_list()[1].get_title(), "Balatro")
+        self.assertEqual(backlog.get_list()[2].get_title(), "CS2")
+        self.assertEqual(backlog.get_list()[2].get_status_text(), "FINISHED")
 
 if __name__ == '__main__':
     unittest.main()
