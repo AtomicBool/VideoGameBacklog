@@ -26,7 +26,29 @@ python main.py
 
 ## Example input/output
 
-TODO
+**Adding a game:**
+```
+> 2
+Format : Title, Hours, Priority, Status, Tags...
+> Minecraft, 3000.0, 1, STARTED, ADVENTURE, OPENWORLD
+Minecraft added
+```
+
+**Viewing the backlog:**
+```
+> 1
+=== Your Backlog ===
+[1] Minecraft, 3000.0 Hours, 1, STARTED, Tags: ['ADVENTURE', 'OPENWORLD']
+[2] Balatro, 50.0 Hours, 2, INTERESTED, Tags: ['ARCADE']
+```
+
+**Removing a game:**
+```
+> 3
+Enter the title of the game to remove:
+> Balatro
+Balatro removed
+```
 
 Valid values:
 - **Status:** `INTERESTED` / `STARTED` / `FINISHED`
