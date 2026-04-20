@@ -1,10 +1,6 @@
 # Video Game Backlog
 a course Group Project
 
-<p align="center">
-  <a href="https://github.com/AtomicBool/ICS4U_TeamProject/releases"><img src="https://img.shields.io/github/v/release/atomicbool/ICS4U_TeamProject?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
-</p>
-
 ## Description
 A command-line application to track your video game backlog.
 It solves the problem that you cant compare your taste of games with STEAM/other platforms
@@ -17,12 +13,21 @@ It solves the problem that you cant compare your taste of games with STEAM/other
 - Backlog is saved as a `JSON` file and reloaded each time you run the program
 
 ## How to Run
+
+Download from 
+<p align="center">
+  <a href="https://github.com/AtomicBool/ICS4U_TeamProject/releases"><img src="https://img.shields.io/github/v/release/atomicbool/ICS4U_TeamProject?include_prereleases&style=for-the-badge" alt="GitHub release"></a>
+</p>
+
+Or....
 * Requires Python 3.10 or later
 ```bash
 git clone https://github.com/AtomicBool/ICS4U_TeamProject.git
 cd ICS4U_TeamProject/src
 python main.py
 ```
+
+> Files named "backlog*.json" will be saved to your users folder
 
 ## Example input/output
 
