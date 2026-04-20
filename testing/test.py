@@ -33,15 +33,7 @@ class TestParser(unittest.TestCase):
         self.assertEqual(game.get_tags(), [])
 
 class TestSave(unittest.TestCase):
-
-    def setUp(self):
-        tmp = tempfile.NamedTemporaryFile(suffix=".json", delete=False)
-        tmp.close()
-        self.save_path = tmp.name
-
-    def tearDown(self):
-        if os.path.exists(self.save_path):
-            os.remove(self.save_path)
+    save_path = save_destination = os.path.join(os.path.expanduser("~"), "backlog_testing.json")
 
     def test_save_load(self):
         games = [
