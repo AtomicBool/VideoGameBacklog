@@ -33,6 +33,16 @@ class TestParser(unittest.TestCase):
         self.assertEqual(game.get_tags(), [])
 
 class TestSave(unittest.TestCase):
+
+    def setUp(self):
+        tmp = tempfile.NamedTemporaryFile(suffix=".json", delete=False)
+        tmp.close()
+        self.save_path = tmp.name
+
+    def tearDown(self):
+        if os.path.exists(self.save_path):
+            os.remove(self.save_path)
+
     def test_save_load(self):
         games = [
             VideoGame("Minecraft", 3000.0, 1, "STARTED", ["ADVENTURE", "OPENWORLD"]),
@@ -68,6 +78,34 @@ class TestSave(unittest.TestCase):
         self.assertEqual(backlog.get_list()[1].get_title(), "Balatro")
         self.assertEqual(backlog.get_list()[2].get_title(), "CS2")
         self.assertEqual(backlog.get_list()[2].get_status_text(), "FINISHED")
+
+class TestBacklog(unittest.TestCase):
+
+    def test_add_new_game(self):
+        backlog = Backlog()
+        backlog.add_game(VideoGame("Minecraft", 10.0, 1, "STARTED", []))
+        self.assertEqual(len(backlog.get_list()), 1)
+        self.assertEqual(backlog.get_list()[0].get_title(), "Minecraft")
+
+    def test_add_game_updates_duplicate_title(self):
+        backlog = Backlog()
+        backlog.add_game(VideoGame("Minecraft", 10.0, 1, "STARTED", []))
+        backlog.add_game(VideoGame("Minecraft", 500.0, 1, "FINISHED", []))
+        self.assertEqual(len(backlog.get_list()), 1)
+        self.assertEqual(backlog.get_list()[0].get_status_text(), "FINISHED")
+
+    def test_remove_existing_game(self):
+        backlog = Backlog()
+        backlog.add_game(VideoGame("Minecraft", 10.0, 1, "STARTED", []))
+        backlog.remove_game("Minecraft")
+        self.assertEqual(len(backlog.get_list()), 0)
+
+    def test_remove_nonexistent_game_no_crash(self):
+        backlog = Backlog()
+        backlog.add_game(VideoGame("Minecraft", 10.0, 1, "STARTED", []))
+        backlog.remove_game("DoesNotExist")
+        self.assertEqual(len(backlog.get_list()), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
