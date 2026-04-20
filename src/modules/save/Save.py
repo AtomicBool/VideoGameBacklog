@@ -2,7 +2,21 @@ import json, os
 from structs.VideoGame import VideoGame
 
 def save(games_list: list[VideoGame], save_destination = os.path.join(os.path.expanduser("~"), "backlog.json")):
-    """Serialize games_list to JSON and write to save_destination."""
+    """
+    Load game data from a Json file
+
+    Parameters:
+        save_destination (string): Location of the file
+    
+    Returns:
+        None
+    
+    Raises:
+        IOError: if the file cannot be read
+
+    Example:
+        >>> game = load("backlog.json")
+    """
     data = []
     for game in games_list:
         data.append({
@@ -16,7 +30,21 @@ def save(games_list: list[VideoGame], save_destination = os.path.join(os.path.ex
         json.dump(data, f, indent=2)
 
 def load(save_destination = os.path.join(os.path.expanduser("~"), "backlog.json")):
-    """Load JSON from save_destination and return a list of VideoGame objects. Returns [] if file not found."""
+    """
+    Save the game data to a Json file
+
+    Parameters:
+        game_list (list[VideoGame]): The list of video game objects
+        save_destination (string): Location to save the file
+    Returns: 
+        None
+    
+    Raises: 
+        IoError: if the file cannot be written or lacking of permissions
+
+    Example:
+        >>> save(game, "backlog.json")
+    """
     if not os.path.exists(save_destination):
         return []
     with open(save_destination, "r") as f:
